@@ -1,0 +1,20 @@
+{
+  "name": "shout",
+  "task": "text",
+  "about": "Upper-case text holding {{word}}. Proves the form, not the sense.",
+  "proves": "partial",
+  "entry_file": "out.txt",
+  "instructions": "Reply in upper case only, and use the given word.",
+  "inputs": {
+    "word": {
+      "kind": "text",
+      "about": "the word that must appear"
+    }
+  },
+  "files": {
+    "check.py": "import sys\nt = open('out.txt').read()\nsys.exit(0 if t.strip() and t == t.upper() and '{{word}}' in t else 1)\n"
+  },
+  "steps": [
+    "python3 check.py"
+  ]
+}

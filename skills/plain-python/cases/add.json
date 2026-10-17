@@ -1,0 +1,5 @@
+{
+  "prompt": "Write add(a, b) returning the sum of two numbers.",
+  "task_type": "python",
+  "tests": "import unittest\nfrom solution import add\nclass T(unittest.TestCase):\n    def test_sum(self):\n        self.assertEqual(add(2, 3), 5)\n        self.assertEqual(add(-1, 1), 0)\n        self.assertEqual(add(2.5, 0.5), 3.0)\nif __name__ == '__main__':\n    unittest.main()\n"
+}
