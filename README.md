@@ -15,7 +15,7 @@ Each command finds the packages of its kind anywhere in the repo (a shallow clon
 | Kind | Folder | Manifest | What's beside it | The check that decides |
 |---|---|---|---|---|
 | **Skill** | `skills/<name>/` | `SKILL.md`: front matter `name` + `description`, then the instructions | `scripts/`, `references/`, `assets/`; optional `cases/*.json` | The manifest's rules (a name of lowercase letters, digits and single hyphens that matches the folder; a description; instructions; a body under 500 lines). On = Claude Code loads it from its own skills folder; another Conductor gets the text in its system prompt. |
-| **Tool** | `tools/<name>/` | `TOOL.md`: front matter, then notes on when to use it | `tool.py` or `tool.mjs` (reads `input.json`, prints the result), optional `schema.json`, `examples/*.json` | Every example runs in Coureur's sandbox; the printed output must match. A tool with no examples is a draft. Served = on the Conductor's MCP tool list, every call run the same way. |
+| **Tool** | `tools/<name>/` | `TOOL.md`: front matter (`name`, `description`, `requires:` modules, `network: no`), then notes on when to use it | `tool.py` or `tool.mjs` (reads `input.json`, prints the result), optional `schema.json`, `examples/*.json` | Every example runs in Coureur's sandbox; the printed output must match. A tool with no examples is a draft. Served = on the Conductor's MCP tool list, every call run the same way. |
 | **Blueprint** | `blueprints/<name>/` | `BLUEPRINT.md`: front matter, then notes | `blueprint.json` (the gate recipe), `cases.json` (`inputs`, `good`, `bad`) | The real gate on the empty answer, every good one and every bad one: stored only when the empty and bad answers fail and the good ones pass. Enabled = usable by name like a built-in. |
 
 ### Training a skill
@@ -27,6 +27,10 @@ A skill's `cases/*.json` are tasks it should make a seat good at, each with the 
 ```
 
 `coureur --skills train NAME` runs every case through the Local seat with the skill's instructions and gates each answer. The pass rate is the skill's scorecard. Change the skill, train again, and the scorecard says whether it helped.
+
+### What you trust when you import
+
+Passing a check is not a review. A tool that passes its examples is still code you imported, and a skill is text a model will follow. What bounds a tool: Coureur runs it in the gates' sandbox — no network, reads only its own folder and the system folders, writes only its own folder, a memory limit, a process cap and a timeout — with a scrubbed environment (no API keys reach it), and only when a Conductor calls it. What a tool must say in `TOOL.md`: `requires:` the interpreter modules it imports (each is imported once in the sandbox before the examples run; a missing one fails the import) and `network: no` (the only value a tool can keep; a tool that says `yes` is refused). Read a package before you enable it. A package from a stranger is a stranger's code, and this repo's maintainers review what they merge, not what you import from elsewhere.
 
 ### A tool's contract
 
