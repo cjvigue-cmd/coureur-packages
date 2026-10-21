@@ -1,0 +1,1 @@
+{ "input": { "value": "2000", "from": "mAh", "to": "C" }, "expect": { "value": "7200", "unit": "C", "from": { "value": "2000", "unit": "mAh" }, "dimension": "charge", "exact": true } }

@@ -1,0 +1,1 @@
+{ "input": { "op": "info", "date": "2026-02-30" }, "expect_contains": "isn't a date" }

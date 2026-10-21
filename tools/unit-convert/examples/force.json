@@ -1,0 +1,1 @@
+{ "input": { "value": "1", "from": "lbf", "to": "N" }, "expect": { "value": "4.44822161526", "unit": "N", "from": { "value": "1", "unit": "lbf" }, "dimension": "force", "exact": false } }

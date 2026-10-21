@@ -1,0 +1,4 @@
+{
+  "input": { "op": "add", "date": "2027-01-31", "months": 1 },
+  "expect": { "result": { "date": "2027-02-28", "weekday": "Sunday", "iso_week": "2027-W08" }, "start": { "date": "2027-01-31", "weekday": "Sunday", "iso_week": "2027-W04" }, "clamped_to_month_end": true }
+}

@@ -1,0 +1,1 @@
+{ "input": { "table": "Item,Qty\nWidget,3" }, "expect_contains": "no total column" }

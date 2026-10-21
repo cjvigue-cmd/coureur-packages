@@ -1,0 +1,6 @@
+{
+  "input": { "table": "| Item | Total |\n|---|---|\n| Travel | 900 |\n| Lodging | 600 |\n| Subtotal | 1,500 |\n| Sensors | 250 |\n| Subtotal | 260 |\n| Total | 1,750 |" },
+  "expect": { "ok": false, "items": 3, "sum_of_lines": "1750.00", "corrected_total": "1750.00", "declared_total": "1750.00", "errors": [
+    { "row": 6, "what": "subtotal", "declared": "260.00", "computed": "250.00" }
+  ] }
+}

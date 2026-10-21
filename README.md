@@ -10,6 +10,20 @@ coureur --blueprint import https://github.com/cjvigue-cmd/coureur-packages.git
 
 Each command finds the packages of its kind anywhere in the repo (a shallow clone, removed after), checks every one, and stores the ones that pass. The console has the same under System → Settings → Packages, where a stored package is switched on, tried, trained or removed.
 
+## What's here
+
+| Package | Kind | What it does |
+|---|---|---|
+| [`plain-python`](skills/plain-python/) | skill | Writes small plain Python functions; an example skill with training cases. |
+| [`budget-check`](tools/budget-check/) | tool | Recomputes a budget table (CSV or Markdown): every line total, subtotal and grand total that doesn't add up, and the corrected total. |
+| [`date-math`](tools/date-math/) | tool | Days, weeks, months and business days between dates; adding them (holidays and month ends handled); a date's weekday, ISO week and quarter. |
+| [`readability`](tools/readability/) | tool | Flesch reading ease, Flesch-Kincaid grade, Gunning fog, long sentences and passive voice. |
+| [`unit-convert`](tools/unit-convert/) | tool | Exact unit conversion with a dimension check: SI prefixes, imperial units, compounds, temperatures, data sizes, dBm. |
+| [`word-count`](tools/word-count/) | tool | Counts the words in a text. |
+| [`shout`](blueprints/shout/) | blueprint | Upper-case text holding a given word; an example blueprint. |
+
+Every tool here is a deterministic script on the standard library: the same input always prints the same answer, which is what a model can't promise for sums, dates and conversions.
+
 ## The three kinds
 
 | Kind | Folder | Manifest | What's beside it | The check that decides |

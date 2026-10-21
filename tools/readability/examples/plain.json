@@ -1,0 +1,4 @@
+{
+  "input": { "text": "The cat sat on the mat. It was happy." },
+  "expect": { "words": 9, "sentences": 2, "syllables": 10, "words_per_sentence": 4.5, "flesch_reading_ease": 108.3, "flesch_kincaid_grade": -0.7, "gunning_fog": 1.8, "long_sentences": 0, "passive_voice": 0, "longest": [{ "words": 6, "starts": "The cat sat on the mat" }, { "words": 3, "starts": "It was happy" }] }
+}

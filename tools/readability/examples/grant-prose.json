@@ -1,0 +1,4 @@
+{
+  "input": { "text": "## Project summary\n\nThe proposed instrumentation was developed by the team, e.g. Dr. Smith, and its effectiveness was evaluated in 3.5 field deployments. Considerable organizational interdependencies necessitate comprehensive documentation.\n\n- Field tests\n- Calibration" },
+  "expect": { "words": 31, "sentences": 5, "syllables": 76, "words_per_sentence": 6.2, "flesch_reading_ease": -6.9, "flesch_kincaid_grade": 15.8, "gunning_fog": 19.3, "long_sentences": 0, "passive_voice": 2, "longest": [{ "words": 20, "starts": "The proposed instrumentation was developed by the team e.g Dr" }, { "words": 6, "starts": "Considerable organizational interdependencies necessitate comprehensive documentation" }, { "words": 2, "starts": "Project summary" }] }
+}

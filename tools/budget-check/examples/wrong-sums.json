@@ -1,0 +1,8 @@
+{
+  "input": { "table": "Category,Item,Hours,Rate,Amount\nPersonnel,Engineer,120,85,10200\nPersonnel,Technician,80,40,3600\nPersonnel,Subtotal,,,13900\nEquipment,Oscilloscope,1,2400,2400\nEquipment,Subtotal,,,2400\n,Grand total,,,16100" },
+  "expect": { "ok": false, "items": 3, "sum_of_lines": "16200.00", "corrected_total": "15800.00", "declared_total": "16100.00", "errors": [
+    { "row": 3, "what": "line total", "item": "Technician", "declared": "3600.00", "computed": "3200.00" },
+    { "row": 4, "what": "subtotal (Personnel)", "declared": "13900.00", "computed": "13800.00" },
+    { "row": 7, "what": "grand total", "declared": "16100.00", "computed": "16200.00" }
+  ] }
+}

@@ -1,0 +1,1 @@
+{ "input": { "value": "10", "from": "°C", "to": "°F", "difference": true }, "expect": { "value": "18", "unit": "°F", "from": { "value": "10", "unit": "°C" }, "dimension": "temperature", "exact": true } }

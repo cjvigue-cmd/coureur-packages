@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "value": { "type": ["string", "number"], "description": "the quantity (a decimal string keeps it exact)" },
+    "from": { "type": "string", "description": "its unit, e.g. lbf, km/h, °F, mAh, dBm" },
+    "to": { "type": "string", "description": "the unit wanted" },
+    "difference": { "type": "boolean", "description": "a temperature difference, not a temperature (no offset)" }
+  },
+  "required": ["value", "from", "to"]
+}

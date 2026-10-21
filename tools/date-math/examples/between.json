@@ -1,0 +1,4 @@
+{
+  "input": { "op": "between", "from": "2026-10-21", "to": "2027-03-01", "holidays": ["2026-11-26", "2026-12-25", "2027-01-01"] },
+  "expect": { "days": 131, "weeks": { "weeks": 18, "days": 5 }, "months": { "months": 4, "days": 8 }, "business_days": 90, "from": { "date": "2026-10-21", "weekday": "Wednesday", "iso_week": "2026-W43" }, "to": { "date": "2027-03-01", "weekday": "Monday", "iso_week": "2027-W09" } }
+}

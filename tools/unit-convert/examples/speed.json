@@ -1,0 +1,1 @@
+{ "input": { "value": "60", "from": "mph", "to": "km/h" }, "expect": { "value": "96.56064", "unit": "km/h", "from": { "value": "60", "unit": "mph" }, "dimension": "speed", "exact": true } }

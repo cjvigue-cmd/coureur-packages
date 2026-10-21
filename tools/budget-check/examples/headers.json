@@ -1,0 +1,4 @@
+{
+  "input": { "table": "Description;Units;Cost per unit;Total cost\nAntenna;4;3,25;13\nBattery;2;(5.00);-10.00\nCable;1;1.200,50;1200.5" },
+  "expect": { "ok": true, "items": 3, "sum_of_lines": "1203.50", "corrected_total": "1203.50", "declared_total": null, "errors": [] }
+}

@@ -1,0 +1,4 @@
+{
+  "input": { "table": "| Item | Qty | Unit cost | Total |\n|---|---|---|---|\n| Radio module | 10 | $12.50 | $125.00 |\n| Enclosure | 10 | 8.00 | 80.00 |\n| PCB fab | 1 | 1,200.00 | 1,200.00 |\n| Total | | | $1,405.00 |" },
+  "expect": { "ok": true, "items": 3, "sum_of_lines": "1405.00", "corrected_total": "1405.00", "declared_total": "1405.00", "errors": [] }
+}

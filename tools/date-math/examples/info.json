@@ -1,0 +1,4 @@
+{
+  "input": { "op": "info", "date": "2026-12-31" },
+  "expect": { "date": "2026-12-31", "weekday": "Thursday", "iso_week": "2026-W53", "iso_week_day": 4, "day_of_year": 365, "quarter": 4, "days_in_month": 31, "leap_year": false, "business_day": true }
+}

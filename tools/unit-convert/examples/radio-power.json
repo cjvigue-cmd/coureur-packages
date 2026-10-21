@@ -1,0 +1,1 @@
+{ "input": { "value": "14", "from": "dBm", "to": "mW" }, "expect": { "value": "25.1188643151", "unit": "mW", "from": { "value": "14", "unit": "dBm" }, "dimension": "power", "exact": false } }

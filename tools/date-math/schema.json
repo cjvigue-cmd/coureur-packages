@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "op": { "type": "string", "enum": ["between", "add", "info"] },
+    "from": { "type": "string", "description": "between: the first date, YYYY-MM-DD" },
+    "to": { "type": "string", "description": "between: the second date" },
+    "date": { "type": "string", "description": "add and info: the date" },
+    "years": { "type": "integer" },
+    "months": { "type": "integer" },
+    "weeks": { "type": "integer" },
+    "days": { "type": "integer" },
+    "business_days": { "type": "integer", "description": "add: Monday-to-Friday days, less the holidays" },
+    "holidays": { "type": "array", "items": { "type": "string" }, "description": "dates that aren't business days" }
+  },
+  "required": ["op"]
+}

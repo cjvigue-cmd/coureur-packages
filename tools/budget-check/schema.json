@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {
+    "table": { "type": "string", "description": "the budget as a CSV or Markdown table, header row first" },
+    "tolerance": { "type": "string", "description": "the largest difference that still counts as equal, in currency units (default 0.01)" }
+  },
+  "required": ["table"]
+}
