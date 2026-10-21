@@ -1,0 +1,4 @@
+{
+  "input": { "op": "between", "from": "2026-12-21", "to": "2027-01-08", "inclusive": true, "holidays": ["2026-12-25", "2027-01-01"] },
+  "expect": { "days": 19, "weeks": { "weeks": 2, "days": 5 }, "months": { "months": 0, "days": 19 }, "business_days": 13, "counted": "both dates and every day between", "holidays_skipped": ["2026-12-25", "2027-01-01"], "from": { "date": "2026-12-21", "weekday": "Monday", "iso_week": "2026-W52" }, "to": { "date": "2027-01-08", "weekday": "Friday", "iso_week": "2027-W01" } }
+}

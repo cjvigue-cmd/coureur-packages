@@ -48,7 +48,7 @@ Passing a check is not a review. A tool that passes its examples is still code y
 
 ### A tool's contract
 
-The script reads `input.json` from the folder it runs in, prints its result to stdout (JSON when it can) and exits 0. Each example is `{"input": {...}, "expect": {...}}` (the printed JSON must equal it) or `{"input": {...}, "expect_contains": "text"}`.
+The script reads `input.json` from the folder it runs in, prints its result to stdout (JSON when it can) and exits 0. A tool that does several jobs (an `op` field) may add `ops.json`, giving each job its own form: `{"between": {"description": …, "parameters": {…}}, …}`. A small model inside a Coureur agent shell is then offered each job as its own function with only its own fields, which it fills in far more reliably than one form whose fields are all optional. `date-math` has one. Each example is `{"input": {...}, "expect": {...}}` (the printed JSON must equal it) or `{"input": {...}, "expect_contains": "text"}`.
 
 ### A blueprint's cases
 

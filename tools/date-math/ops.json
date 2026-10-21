@@ -1,0 +1,42 @@
+{
+  "between": {
+    "description": "Count the days, weeks, months and Monday-to-Friday working days between two dates.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "from": { "type": "string", "description": "the first date, YYYY-MM-DD" },
+        "to": { "type": "string", "description": "the second date, YYYY-MM-DD" },
+        "inclusive": { "type": "boolean", "description": "true when the question counts both dates ('counting both', 'inclusive', 'from … through …'); false to count up to but not including the second" },
+        "holidays": { "type": "array", "items": { "type": "string" }, "description": "every holiday the question names, YYYY-MM-DD; [] if none" }
+      },
+      "required": ["from", "to", "inclusive", "holidays"]
+    }
+  },
+  "add": {
+    "description": "A date moved forward (or back, with negative numbers) by years, months, weeks, days and then working days. Adding months to a day the target month lacks gives its last day.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "date": { "type": "string", "description": "the starting date, YYYY-MM-DD" },
+        "years": { "type": "integer" },
+        "months": { "type": "integer" },
+        "weeks": { "type": "integer" },
+        "days": { "type": "integer" },
+        "business_days": { "type": "integer", "description": "Monday-to-Friday days, less the holidays, added last" },
+        "holidays": { "type": "array", "items": { "type": "string" }, "description": "every holiday the question names, YYYY-MM-DD; [] if none" }
+      },
+      "required": ["date", "years", "months", "weeks", "days", "business_days", "holidays"]
+    }
+  },
+  "info": {
+    "description": "A date's weekday, ISO week, day of the year, quarter, days in its month and whether it's a working day.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "date": { "type": "string", "description": "YYYY-MM-DD" },
+        "holidays": { "type": "array", "items": { "type": "string" }, "description": "holidays, YYYY-MM-DD; [] if none" }
+      },
+      "required": ["date", "holidays"]
+    }
+  }
+}

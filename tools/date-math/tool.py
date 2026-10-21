@@ -1,12 +1,14 @@
 """date-math: calendar arithmetic, done by the calendar.
 
 Reads input.json with an "op":
-  between  {"from", "to", "holidays"?}  days, weeks, calendar months, business days
+  between  {"from", "to", "inclusive"?, "holidays"?}  days, weeks, calendar months, business days
   add      {"date", "years"?, "months"?, "weeks"?, "days"?, "business_days"?, "holidays"?}
   info     {"date"}  weekday, ISO week, day of the year, quarter, days in the month, leap year
 Dates are ISO (YYYY-MM-DD). Business days are Monday to Friday, less the
 given holidays. "between" counts from the first date up to but not
-including the second, as subtraction does.
+including the second, as subtraction does; with "inclusive": true it
+counts both dates. Its result says which ("counted") and which holidays
+it skipped.
 """
 import calendar
 import json
@@ -57,7 +59,12 @@ def main():
         holidays = {day(h, "holidays") for h in d.get("holidays", [])}
         if op == "between":
             a, b = day(d.get("from"), "from"), day(d.get("to"), "to")
+            inclusive = d.get("inclusive", False)
+            if not isinstance(inclusive, bool):
+                raise Bad("inclusive: true or false")
             lo, hi, sign = (a, b, 1) if a <= b else (b, a, -1)
+            if inclusive:
+                hi += timedelta(days=1)
             n = (hi - lo).days
             months = (hi.year - lo.year) * 12 + hi.month - lo.month
             while months > 0 and add_months(lo, months)[0] > hi:
@@ -69,6 +76,8 @@ def main():
                 "weeks": {"weeks": n // 7, "days": n % 7},
                 "months": {"months": months, "days": rest},
                 "business_days": sign * work,
+                "counted": ("both dates and every day between" if inclusive else "from the first date up to, not including, the second"),
+                "holidays_skipped": sorted(h.isoformat() for h in holidays if lo <= h < hi and h.weekday() < 5),
                 "from": describe(a), "to": describe(b),
             }
         elif op == "add":

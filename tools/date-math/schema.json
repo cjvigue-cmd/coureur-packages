@@ -10,7 +10,8 @@
     "weeks": { "type": "integer" },
     "days": { "type": "integer" },
     "business_days": { "type": "integer", "description": "add: Monday-to-Friday days, less the holidays" },
-    "holidays": { "type": "array", "items": { "type": "string" }, "description": "dates that aren't business days" }
+    "inclusive": { "type": "boolean", "description": "between: count both dates (the question says 'counting both', 'inclusive', 'from … through …')" },
+    "holidays": { "type": "array", "items": { "type": "string" }, "description": "every holiday the question names, YYYY-MM-DD: they aren't business days" }
   },
   "required": ["op"]
 }
